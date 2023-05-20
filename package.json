@@ -1,0 +1,17 @@
+{
+	"name": "@tpguy825/clicker",
+	"version": "1.0.1",
+	"description": "Mouse event helper library for React",
+	"main": "dist/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/tpguy825/clicker.git"
+	},
+	"author": "tpguy825",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/tpguy825/clicker/issues"
+	},
+	"homepage": "https://github.com/tpguy825/clicker#readme"
+}
+

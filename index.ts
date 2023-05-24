@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { type MouseEvent, type TouchEvent, type MutableRefObject, useCallback, useRef, useState } from "react";
 
 /**
  * @template Element Used to specify what type of element the event listeners will be attached to.
@@ -6,8 +6,8 @@ import { useCallback, useRef, useState } from "react";
  * @param onClick The function to be called when the element is clicked.
  */
 export function useLongPress<Element extends HTMLElement = HTMLElement>(
-	onLongPress: (e: React.MouseEvent<Element> | React.TouchEvent<Element>) => void,
-	onClick: (e: React.MouseEvent<Element> | React.TouchEvent<Element>) => void,
+	onLongPress: (e: MouseEvent<Element> | TouchEvent<Element>) => void,
+	onClick: (e: MouseEvent<Element> | TouchEvent<Element>) => void,
 	options?: {
 		shouldPreventDefault?: boolean;
 		delay?: number;
@@ -15,11 +15,11 @@ export function useLongPress<Element extends HTMLElement = HTMLElement>(
 ) {
 	const { shouldPreventDefault = true, delay = 300 } = options || {};
 	const [longPressTriggered, setLongPressTriggered] = useState(false);
-	const timeout: React.MutableRefObject<number | NodeJS.Timeout | undefined> = useRef();
-	const target: React.MutableRefObject<Element | undefined> = useRef();
+	const timeout: MutableRefObject<number | NodeJS.Timeout | undefined> = useRef();
+	const target: MutableRefObject<Element | undefined> = useRef();
 
 	const start = useCallback(
-		(event: React.MouseEvent<Element> | React.TouchEvent<Element>) => {
+		(event: MouseEvent<Element> | TouchEvent<Element>) => {
 			if (shouldPreventDefault && event.target) {
 				event.target.addEventListener("touchend", preventDefault, {
 					passive: false,
@@ -35,7 +35,7 @@ export function useLongPress<Element extends HTMLElement = HTMLElement>(
 	);
 
 	const clear = useCallback(
-		(event: React.MouseEvent<Element> | React.TouchEvent<Element>, shouldTriggerClick = true) => {
+		(event: MouseEvent<Element> | TouchEvent<Element>, shouldTriggerClick = true) => {
 			if (timeout.current) clearTimeout(timeout.current);
 			if (shouldTriggerClick && !longPressTriggered) onClick(event);
 			setLongPressTriggered(false);
@@ -62,7 +62,7 @@ export function useLongPress<Element extends HTMLElement = HTMLElement>(
 		onMouseDown: start,
 		onTouchStart: start,
 		onMouseUp: clear,
-		onMouseLeave: (event: Parameters<typeof clear>[0]) => clear(event, false),
+		onMouseLeave: (event: MouseEvent<Element> | TouchEvent<Element>) => clear(event, false),
 		onTouchEnd: clear,
 	};
 }
@@ -72,8 +72,8 @@ export function useLongPress<Element extends HTMLElement = HTMLElement>(
 export function useLongHover(time: number): [
 	boolean,
 	{
-		onMouseEnter: (event: React.MouseEvent) => void;
-		onMouseLeave: (event: React.MouseEvent) => void;
+		onMouseEnter: (event: MouseEvent) => void;
+		onMouseLeave: (event: MouseEvent) => void;
 	},
 ] {
 	const [isHoveredForTime, setIsHoveredForTime] = useState(false);

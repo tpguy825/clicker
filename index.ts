@@ -2,15 +2,21 @@ import { useCallback, useRef, useState } from "react";
 
 /**
  * @template Element Used to specify what type of element the event listeners will be attached to.
+ * @param onLongPress The function to be called when the element is clicked and held for the time specified in `options.delay`.
+ * @param onClick The function to be called when the element is clicked.
  */
 export function useLongPress<Element extends HTMLElement = HTMLElement>(
 	onLongPress: (e: React.MouseEvent<Element> | React.TouchEvent<Element>) => void,
 	onClick: (e: React.MouseEvent<Element> | React.TouchEvent<Element>) => void,
-	{ shouldPreventDefault = true, delay = 1000 }: { shouldPreventDefault?: boolean; delay?: number } = {},
+	options?: {
+		shouldPreventDefault?: boolean;
+		delay?: number;
+	},
 ) {
+	const { shouldPreventDefault = true, delay = 300 } = options || {};
 	const [longPressTriggered, setLongPressTriggered] = useState(false);
-	const timeout = useRef<NodeJS.Timeout>();
-	const target = useRef<Element>();
+	const timeout: React.MutableRefObject<number | NodeJS.Timeout | undefined> = useRef();
+	const target: React.MutableRefObject<Element | undefined> = useRef();
 
 	const start = useCallback(
 		(event: React.MouseEvent<Element> | React.TouchEvent<Element>) => {
@@ -71,7 +77,7 @@ export function useLongHover(time: number): [
 	},
 ] {
 	const [isHoveredForTime, setIsHoveredForTime] = useState(false);
-	const [timeout, changeTimeout] = useState<NodeJS.Timeout | null>(null);
+	const [timeout, changeTimeout] = useState<NodeJS.Timeout | number | null>(null);
 	const handlers = {
 		onMouseLeave: () => {
 			if (timeout) {

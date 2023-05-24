@@ -1,6 +1,6 @@
 {
 	"name": "@tpguy825/clicker",
-	"version": "1.0.1",
+	"version": "1.0.4",
 	"description": "Mouse event helper library for React",
 	"main": "dist/index.js",
 	"repository": {
@@ -14,6 +14,12 @@
 	},
 	"homepage": "https://github.com/tpguy825/clicker#readme",
 	"devDependencies": {
-		"typescript": "^5.0.4"
-	}
+		"typescript": "^5.0.4",
+		"@types/react": "^18.2.7",
+		"@types/node": "^20.2.3"
+	},
+	"dependencies": {
+		"react": "^18.2.0"
+	},
+	"keywords": ["react", "mouse", "click", "event", "hook"]
 }

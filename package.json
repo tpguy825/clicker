@@ -1,6 +1,7 @@
 {
 	"name": "@tpguy825/clicker",
 	"version": "1.0.6",
+	"private": false,
 	"description": "Mouse event helper library for React",
 	"main": "dist/index.js",
 	"repository": {

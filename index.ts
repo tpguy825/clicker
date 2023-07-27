@@ -1,18 +1,26 @@
 import { type MouseEvent, type TouchEvent, type MutableRefObject, useCallback, useRef, useState } from "react";
 
+type LongPress<Element extends HTMLElement> = {
+	onMouseDown: (event: MouseEvent<Element> | TouchEvent<Element>) => void;
+	onTouchStart: (event: MouseEvent<Element> | TouchEvent<Element>) => void;
+	onMouseUp: (event: MouseEvent<Element> | TouchEvent<Element>) => void;
+	onMouseLeave: (event: MouseEvent<Element> | TouchEvent<Element>) => void;
+	onTouchEnd: (event: MouseEvent<Element> | TouchEvent<Element>) => void;
+};
+
 /**
  * @template Element Used to specify what type of element the event listeners will be attached to.
  * @param onLongPress The function to be called when the element is clicked and held for the time specified in `options.delay`.
  * @param onClick The function to be called when the element is clicked.
  */
-export function useLongPress<Element extends HTMLElement = HTMLElement>(
+export function useLongPress<Element extends HTMLElement>(
 	onLongPress: (e: MouseEvent<Element> | TouchEvent<Element>) => void,
 	onClick: (e: MouseEvent<Element> | TouchEvent<Element>) => void,
 	options?: {
 		shouldPreventDefault?: boolean;
 		delay?: number;
 	},
-) {
+): LongPress<Element> {
 	const { shouldPreventDefault = true, delay = 300 } = options || {};
 	const [longPressTriggered, setLongPressTriggered] = useState(false);
 	const timeout: MutableRefObject<number | NodeJS.Timeout | undefined> = useRef();
@@ -70,8 +78,8 @@ export function useLongPress<Element extends HTMLElement = HTMLElement>(
  * @param {number} time The time in milliseconds that the user must hover for.
  */
 export function useLongHover(time: number): [
-	boolean,
-	{
+	isHoveredForTime: boolean,
+	handlers: {
 		onMouseEnter: (event: MouseEvent) => void;
 		onMouseLeave: (event: MouseEvent) => void;
 	},

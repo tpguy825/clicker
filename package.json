@@ -12,14 +12,21 @@
 	"bugs": {
 		"url": "https://github.com/tpguy825/clicker/issues"
 	},
+	"packageManager": "yarn@3.6.0",
 	"homepage": "https://github.com/tpguy825/clicker#readme",
 	"devDependencies": {
-		"typescript": "^5.0.4",
-		"@types/react": "^18.2.7",
-		"@types/node": "^20.2.3"
+		"@types/node": "^20.4.5",
+		"@types/react": "^18.2.17",
+		"typescript": "^5.1.6"
 	},
 	"dependencies": {
 		"react": "^18.2.0"
 	},
-	"keywords": ["react", "mouse", "click", "event", "hook"]
+	"keywords": [
+		"react",
+		"mouse",
+		"click",
+		"event",
+		"hook"
+	]
 }

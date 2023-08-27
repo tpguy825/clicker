@@ -13,7 +13,7 @@
 	"bugs": {
 		"url": "https://github.com/tpguy825/clicker/issues"
 	},
-	"packageManager": "yarn@3.6.0",
+	"packageManager": "yarn@3.6.3",
 	"homepage": "https://github.com/tpguy825/clicker#readme",
 	"devDependencies": {
 		"@types/node": "^20.4.5",

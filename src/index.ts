@@ -15,7 +15,7 @@ type LongPress<Element extends HTMLElement> = {
  */
 export function useLongPress<Element extends HTMLElement>(
 	onLongPress: (e: MouseEvent<Element> | TouchEvent<Element>) => void,
-	onClick: (e: MouseEvent<Element> | TouchEvent<Element>) => void,
+	onClick?: (e: MouseEvent<Element> | TouchEvent<Element>) => void,
 	options?: {
 		shouldPreventDefault?: boolean;
 		delay?: number;
@@ -45,7 +45,7 @@ export function useLongPress<Element extends HTMLElement>(
 	const clear = useCallback(
 		(event: MouseEvent<Element> | TouchEvent<Element>, shouldTriggerClick = true) => {
 			if (timeout.current) clearTimeout(timeout.current);
-			if (shouldTriggerClick && !longPressTriggered) onClick(event);
+			if (shouldTriggerClick && !longPressTriggered && onClick) onClick(event);
 			setLongPressTriggered(false);
 			if (shouldPreventDefault && target.current) {
 				target.current.removeEventListener("touchend", preventDefault);

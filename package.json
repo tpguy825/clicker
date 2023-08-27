@@ -4,6 +4,20 @@
 	"description": "Mouse event helper library for React",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
+		},
+		"./preact": {
+			"import": "./dist/preact/index.js",
+			"require": "./dist/preact/index.js"
+		},
+		"./dist/index.js": "./dist/index.js",
+		"./dist/index.d.ts": "./dist/index.d.ts",
+		"./dist/preact/index.js": "./dist/preact/index.js",
+		"./dist/preact/index.d.ts": "./dist/preact/index.d.ts"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/tpguy825/clicker.git"

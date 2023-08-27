@@ -1,6 +1,4 @@
-index.ts
+src
 renovate.json
-.vscode
-.yarn
-compile.bat
-.pnp.cjs
+node_modules
+

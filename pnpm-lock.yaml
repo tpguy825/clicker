@@ -7,7 +7,7 @@ settings:
 dependencies:
   preact:
     specifier: ^10.17.1
-    version: 10.17.1
+    version: 10.19.6
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -60,8 +60,8 @@ packages:
       js-tokens: 4.0.0
     dev: false
 
-  /preact@10.17.1:
-    resolution: {integrity: sha512-X9BODrvQ4Ekwv9GURm9AKAGaomqXmip7NQTZgY7gcNmr7XE83adOMJvd3N42id1tMFU7ojiynRsYnY6/BRFxLA==}
+  /preact@10.19.6:
+    resolution: {integrity: sha512-gympg+T2Z1fG1unB8NH29yHJwnEaCH37Z32diPDku316OTnRPeMbiRV9kTrfZpocXjdfnWuFUl/Mj4BHaf6gnw==}
     dev: false
 
   /react@18.2.0:

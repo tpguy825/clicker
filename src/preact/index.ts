@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, MutableRef } from "preact/hooks";
+import { useState, useCallback, useRef } from "preact/hooks";
 import type { JSX } from "preact";
 
 type LongPress<Element extends HTMLElement> = Pick<
@@ -21,8 +21,8 @@ export function useLongPress<Element extends HTMLElement>(
 ): LongPress<Element> {
 	const { shouldPreventDefault = true, delay = 300 } = options || {};
 	const [longPressTriggered, setLongPressTriggered] = useState(false);
-	const timeout: MutableRef<number | NodeJS.Timeout | undefined> = useRef();
-	const target: MutableRef<Element | undefined> = useRef();
+	const timeout = useRef<number | NodeJS.Timeout>();
+	const target = useRef<Element>();
 
 	const start = useCallback(
 		(event: JSX.TargetedMouseEvent<Element> | JSX.TargetedTouchEvent<Element>) => {

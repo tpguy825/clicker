@@ -1,4 +1,4 @@
-import { type MouseEvent, type TouchEvent, type MutableRefObject, useCallback, useRef, useState } from "react";
+import { type MouseEvent, type TouchEvent, useCallback, useRef, useState } from "react";
 
 type LongPress<Element extends HTMLElement> = {
 	onMouseDown: (event: MouseEvent<Element> | TouchEvent<Element>) => void;
@@ -23,8 +23,8 @@ export function useLongPress<Element extends HTMLElement>(
 ): LongPress<Element> {
 	const { shouldPreventDefault = true, delay = 300 } = options || {};
 	const [longPressTriggered, setLongPressTriggered] = useState(false);
-	const timeout: MutableRefObject<number | NodeJS.Timeout | undefined> = useRef();
-	const target: MutableRefObject<Element | undefined> = useRef();
+	const timeout = useRef<number | NodeJS.Timeout | null>(null);
+	const target = useRef<Element | null>(null);
 
 	const start = useCallback(
 		(event: MouseEvent<Element> | TouchEvent<Element>) => {

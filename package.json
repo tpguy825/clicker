@@ -30,11 +30,11 @@
 	"scripts": {
 		"build": "tsc -p tsconfig.json"
 	},
-	"packageManager": "pnpm@10.11.0",
+	"packageManager": "pnpm@10.13.1",
 	"homepage": "https://github.com/tpguy825/clicker#readme",
 	"devDependencies": {
-		"@types/node": "^22.15.23",
-		"@types/react": "^19.1.6",
+		"@types/node": "^24.1.0",
+		"@types/react": "^19.1.9",
 		"typescript": "^5.8.3"
 	},
 	"peerDependencies": {

@@ -33,7 +33,7 @@
 	"packageManager": "pnpm@10.17.0",
 	"homepage": "https://github.com/tpguy825/clicker#readme",
 	"devDependencies": {
-		"@types/node": "^24.5.1",
+		"@types/node": "^24.5.2",
 		"@types/react": "^19.1.13",
 		"typescript": "^5.9.2"
 	},

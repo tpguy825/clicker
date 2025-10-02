@@ -34,12 +34,12 @@
 	"homepage": "https://github.com/tpguy825/clicker#readme",
 	"devDependencies": {
 		"@types/node": "^24.6.1",
-		"@types/react": "^19.1.16",
+		"@types/react": "^19.2.0",
 		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
 		"preact": "^10.27.2",
-		"react": "^19.1.1"
+		"react": "^19.2.0"
 	},
 	"keywords": [
 		"react",

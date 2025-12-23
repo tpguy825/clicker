@@ -30,7 +30,7 @@
 	"scripts": {
 		"build": "tsc -p tsconfig.json"
 	},
-	"packageManager": "pnpm@10.26.1",
+	"packageManager": "pnpm@10.26.2",
 	"homepage": "https://github.com/tpguy825/clicker#readme",
 	"devDependencies": {
 		"@types/node": "^24.10.4",

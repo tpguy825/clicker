@@ -16,8 +16,8 @@ importers:
         version: 19.2.4
     devDependencies:
       '@types/node':
-        specifier: ^24.10.10
-        version: 24.10.10
+        specifier: ^24.10.11
+        version: 24.10.11
       '@types/react':
         specifier: ^19.2.13
         version: 19.2.13
@@ -27,8 +27,8 @@ importers:
 
 packages:
 
-  '@types/node@24.10.10':
-    resolution: {integrity: sha512-+0/4J266CBGPUq/ELg7QUHhN25WYjE0wYTPSQJn1xeu8DOlIOPxXxrNGiLmfAWl7HMMgWFWXpt9IDjMWrF5Iow==}
+  '@types/node@24.10.11':
+    resolution: {integrity: sha512-/Af7O8r1frCVgOz0I62jWUtMohJ0/ZQU/ZoketltOJPZpnb17yoNc9BSoVuV9qlaIXJiPNOpsfq4ByFajSArNQ==}
 
   '@types/react@19.2.13':
     resolution: {integrity: sha512-KkiJeU6VbYbUOp5ITMIc7kBfqlYkKA5KhEHVrGMmUUMt7NeaZg65ojdPk+FtNrBAOXNVM5QM72jnADjM+XVRAQ==}
@@ -53,7 +53,7 @@ packages:
 
 snapshots:
 
-  '@types/node@24.10.10':
+  '@types/node@24.10.11':
     dependencies:
       undici-types: 7.16.0
 

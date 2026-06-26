@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       preact:
-        specifier: ^10.29.2
-        version: 10.29.2
+        specifier: ^10.29.3
+        version: 10.29.3
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -36,8 +36,8 @@ packages:
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
 
-  preact@10.29.2:
-    resolution: {integrity: sha512-7tNmwg/7mzzAoB/8kSg6Hl37JraAZw3Z3A0JSY7VXlZwo82Xn0G7wKbNNs2qoF4ZEEsQGTwDAroNdqKs1ofJxQ==}
+  preact@10.29.3:
+    resolution: {integrity: sha512-D9NL1GAnJZhc3RndVs4gDdxEeU9TcHgywMrhhOsnpdlvFjdbx0gAsLUnH6JEhlJH5giL7Tx5biWPUSEXE/HPzw==}
 
   react@19.2.7:
     resolution: {integrity: sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ==}
@@ -63,7 +63,7 @@ snapshots:
 
   csstype@3.2.3: {}
 
-  preact@10.29.2: {}
+  preact@10.29.3: {}
 
   react@19.2.7: {}
 

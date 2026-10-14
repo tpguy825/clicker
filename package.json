@@ -39,7 +39,7 @@
 	},
 	"peerDependencies": {
 		"preact": "^10.29.8",
-		"react": "^19.3.0"
+		"react": "^19.3.1"
 	},
 	"keywords": [
 		"react",
